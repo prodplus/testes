@@ -1,0 +1,47 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Bem vindo ao sistema!"></app-titulo>
+  <div class="row col-12 mt-5">
+    <div class="col-4">
+      <div class="card card-home">
+        <div class="card-header card-time" [routerLink]="['/estruturas/calc-tempos']"
+            style="cursor: pointer;">
+          <h4 class="text-center text-light">Calcular Tempos</h4>
+        </div>
+        <div class="card-body card-time-body" [routerLink]="['/estruturas/calc-tempos']"
+            style="cursor: pointer;">
+          <div class="text-center" style="cursor: pointer;">
+            <img src="/assets/img/time.png" alt="calcular tempos">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card card-home">
+        <div class="card-header card-time" [routerLink]="['/estruturas/simulacoes']"
+            style="cursor: pointer;">
+          <h4 class="text-center text-light">Simulações</h4>
+        </div>
+        <div class="card-body card-time-body" [routerLink]="['/estruturas/simulacoes']"
+            style="cursor: pointer;">
+          <div class="text-center" style="cursor: pointer;">
+            <img src="/assets/img/estrutura.png" alt="calcular tempos" height="200" width="200">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card card-home">
+        <div class="card-header card-time" [routerLink]="['/estruturas/calc-custos']"
+            style="cursor: pointer;">
+          <h4 class="text-center text-light">Calcular Custos</h4>
+        </div>
+        <div class="card-body card-time-body" [routerLink]="['/estruturas/calc-custos']"
+            style="cursor: pointer;">
+          <div class="text-center" style="cursor: pointer;">
+            <img src="/assets/img/custos.png" alt="calcular tempos" height="200" width="200">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-pagina>

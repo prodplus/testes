@@ -1,0 +1,11 @@
+.card-time {
+  background-color: rgb(4, 71, 4);
+}
+
+.card-time-body {
+  background-color: azure;
+}
+
+.card-home:hover {
+  box-shadow: 0 5px 5px 5px grey;
+}

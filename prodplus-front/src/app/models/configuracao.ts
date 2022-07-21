@@ -16,3 +16,8 @@ export class Configuracao {
     this.mediaIpcm = mediaIpcm;
   }
 }
+
+export function ordenaTurnos(turnos: Turno[]): Turno[] {
+  turnos.sort((a, b) => a.inicio > b.inicio ? 1 : a.inicio < b.inicio ? -1 : 0);
+  return turnos;
+}

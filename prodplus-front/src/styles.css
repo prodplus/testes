@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Roboto+Mono&display=swap");
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-top: 60px;
+  background-image: url("src/assets/img/fundo.jpg");
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+.container {
+  padding-bottom: 60px;
+}
+
+h1, h2, h3, h4, h5, h6, label, th, td, small, button.btn, a.page-link,
+.dropdown-item, .form-control, .nav-link {
+  font-family: "Roboto Mono", monospace;
+}
+
+.btn-inside {
+  margin-top: 2em;
+  height: 38px !important;
+  width: 40px !important;
+}
+
+.btn-control {
+  width: 60px;
+}
+
+.btn-sm {
+  width: 50px;
+}
+
+#orgChartProd .org-chart-entity-border {
+  border-left: 2px solid green;
+  border-top: 2px solid green;
+}
+
+#orgChartProc .org-chart-entity-border {
+  border-left: 2px solid red;
+  border-top: 2px solid red;
+}
+
+#orgChartProd .org-chart-entity-connector {
+  height: 2em;
+}
+
+#orgChartProc .org-chart-entity-connector {
+  height: 2em;
+}
+
+#orgChartProd .org-chart-entity-box {
+  align-items: center;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(7, 7, 43);
+  border-radius: 3px;
+  box-shadow: 0 0.5rem 1rem #777 !important;
+}
+
+#orgChartProc .org-chart-entity-box {
+  align-items: center;
+  border: 2px solid rgb(89, 168, 87);
+  background-color: rgb(187, 221, 176);
+  border-radius: 3px;
+  box-shadow: 0 0.5rem 1rem #777 !important;
+}
+
+#orgChartProd .org-chart-entity-name {
+  color: coral;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+
+#orgChartProc .org-chart-entity-name {
+  color: rgb(41, 14, 5);
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+
+#orgChartProd .org-chart-entity-type {
+  font-family: "Roboto Mono", monospace;
+}
+
+#orgChartProc .org-chart-entity-type {
+  font-family: "Roboto Mono", monospace;
+  color: rgb(114, 9, 9);
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  background: rgb(34, 1, 1);
+  border-radius: 5%;
+}
+
+.circulo-producao {
+  width: 150px;
+  height: 120px;
+  background: rgb(11, 116, 93);
+  border-radius: 5%;
+  box-shadow: 7px 7px 10px rgb(13, 177, 141);
+}
+
+.circulo-espera {
+  width: 150px;
+  height: 120px;
+  background: rgb(31, 3, 3);
+  border-radius: 5%;
+  box-shadow: 7px 7px 10px rgb(131, 18, 18);
+}
+
+.circulo-setup {
+  width: 150px;
+  height: 120px;
+  background: rgb(6, 54, 6);
+  border-radius: 5%;
+  box-shadow: 7px 7px 10px rgb(40, 230, 40);
+}
+
+.circulo-parado {
+  width: 150px;
+  height: 120px;
+  background: rgb(31, 28, 1);
+  border-radius: 5%;
+}
+
+.background-org {
+  opacity: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

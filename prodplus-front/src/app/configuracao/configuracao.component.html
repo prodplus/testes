@@ -1,0 +1,18 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Configurações"></app-titulo>
+  <div class="text-center mb-4">
+    <app-botao-home></app-botao-home>
+  </div>
+  <app-cad-turno titulo="Turnos Semana" [turnos]="configuracao.turnosSemana"
+      (alteracao)="alterouTurno('SEMANA', $event)" idInputInicio="inputIniSemana"
+      idInputFim="inputFimSemana">
+  </app-cad-turno>
+  <app-cad-turno titulo="Turnos Sábado" [turnos]="configuracao.turnosSabado"
+      (alteracao)="alterouTurno('SABADO', $event)" idInputInicio="inputIniSabado"
+      idInputFim="inputFimSabado">
+  </app-cad-turno>
+  <app-cad-turno titulo="Turnos Sábado" [turnos]="configuracao.turnosDomingo"
+      (alteracao)="alterouTurno('DOMINGO', $event)" idInputInicio="inputIniDomingo"
+      idInputFim="inputFimDomingo">
+  </app-cad-turno>
+</app-pagina>
