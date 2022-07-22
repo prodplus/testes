@@ -135,3 +135,7 @@ h1, h2, h3, h4, h5, h6, label, th, td, small, button.btn, a.page-link,
 .uppercase {
   text-transform: uppercase;
 }
+
+.th-btn {
+  width: 60px;
+}

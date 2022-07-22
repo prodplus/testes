@@ -1,0 +1,40 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Feriados"></app-titulo>
+  <app-controle mensagem="cadastrar novo feriado" [rota]="['/cadastros/feriados/novo']">
+  </app-controle>
+  <app-tabela [tamanhoTotal]="feriados.totalElements" [pagina]="pagina"
+      [tamanhoPagina]="feriados.size" (mudaPagina)="mudaPagina($event)">
+    <caption *ngIf="feriados?.totalElements == 0; else mensagem;">
+      nenhum feriado cadastrado...
+    </caption>
+    <ng-template #mensagem>
+      <caption>
+        feriados cadastrados: {{ feriados.totalElements }}
+      </caption>
+    </ng-template>
+    <thead class="bg-dark text-white">
+      <th>Descrição</th>
+      <th class="text-center">Data</th>
+      <th class="text-center th-btn">edt</th>
+      <th class="text-center th-btn">exc</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feriado of feriados.content">
+        <td class="align-middle">{{ feriado.descricao }}</td>
+        <td class="text-center align-middle">
+          {{ feriado.data | date: 'dd/MM' }}
+        </td>
+        <td class="text-center align-middle">
+          <app-botao-editar-tab mensagem="editar feriado"
+              [rota]="['novo', feriado.id != null ? feriado.id + '' : '']">
+          </app-botao-editar-tab>
+        </td>
+        <td class="text-center align-middle">
+          <app-botao-excluir-tab [id]="feriado.id" (clique)="chamaModal($event)">
+          </app-botao-excluir-tab>
+        </td>
+      </tr>
+    </tbody>
+  </app-tabela>
+</app-pagina>
+<app-modal #modal (sim)="concordaModal($event)"></app-modal>

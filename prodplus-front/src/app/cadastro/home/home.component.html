@@ -1,0 +1,23 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Cadastros"></app-titulo>
+  <div class="text-center mb-5">
+    <app-botao-home> </app-botao-home>
+  </div>
+  <div class="row col-12 mt-5">
+    <div class="col-3">
+      <div class="card">
+        <div class="card-header" style="cursor: pointer;" [routerLink]="['/cadastros/feriados']">
+          <div class="card-title">Feriados</div>
+        </div>
+        <div class="card-body">
+          <div>
+            <a href="#" [routerLink]="['/cadastros/feriados']" class="me-lg-5">Listar</a>
+            <a href="#" [routerLink]="['/cadastros/feriados/novo']">Novo</a>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-pagina>

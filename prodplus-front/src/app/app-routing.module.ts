@@ -6,7 +6,11 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'configuracoes', component: ConfiguracaoComponent }
+  { path: 'configuracoes', component: ConfiguracaoComponent },
+  {
+    path: 'cadastros',
+    loadChildren: () => import('./cadastro/cadastro.module').then((m) => m.CadastroModule),
+  }
 ];
 
 @NgModule({

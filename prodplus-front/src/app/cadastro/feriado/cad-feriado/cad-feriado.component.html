@@ -1,0 +1,40 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Cadastrar Feriado"></app-titulo>
+  <div class="text-center mb-5">
+    <app-botao-cancelar (clique)="cancelar()"></app-botao-cancelar>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <div class="row col-12">
+      <div class="col-6 mb-3">
+        <label for="inputDescricao" class="form-label">Descrição:</label>
+        <input type="text" id="inputDescricao" [ngClass]="getInputUpperClass('descricao')"
+            formControlName="descricao" #input>
+        <div class="invalid-feedback">
+          campo obrigatório!
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="inputData" class="form-label">Data:</label>
+        <input type="date" id="inputData" [ngClass]="getInputClass('data')"
+            formControlName="data">
+        <div class="invalid-feedback">
+          campo obrigatório!
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-check form-switch">
+        <input type="checkbox" id="inputRepete" class="form-check-input"
+            formControlName="repete">
+        <label for="inputRepete" class="form-check-label">Repete anualmente?</label>
+      </div>
+    </div>
+    <div class="d-grid g-1">
+      <button class="btn btn-lg btn-success" type="submit" [disabled]="form.invalid">
+        salvar
+      </button>
+    </div>
+  </form>
+</app-pagina>
+<app-modal #modal></app-modal>
