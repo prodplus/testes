@@ -1,0 +1,50 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Custos Fixos"></app-titulo>
+  <app-controle-ativos [rota]="['novo']" mensagemNovo="cadastrar novo custo"
+      [ativos]="ativos" (clicou)="alteraAtivos()">
+  </app-controle-ativos>
+
+  <app-tabela [tamanhoTotal]="custos.totalElements" [pagina]="pagina"
+      [tamanhoPagina]="custos.size" (mudaPagina)="mudaPagina($event)">
+    <caption *ngIf="custos.totalElements == 0">
+      nenhum custo cadastrado...
+    </caption>
+    <caption *ngIf="custos.totalElements > 0">
+      total mensal: {{ totalMes | currency: 'BRL':'symbol':'0.2-2':'pt' }}
+    </caption>
+    <thead class="bg-dark text-white">
+      <th class="text-center">Descrição</th>
+      <th class="text-center">Período</th>
+      <th class="text-end">Valor</th>
+      <th class="text-center th-btn">edt</th>
+      <th class="text-center th-btn">a/d</th>
+      <th class="text-center th-btn">exc</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let custo of custos.content">
+        <td class="align-middle">{{ custo.descricao }}</td>
+        <td class="text-center align-middle">
+          {{ custo.periodo }}
+        </td>
+        <td class="text-end align-middle">
+          {{ custo.valor | currency: 'BRL':'symbol':'0.2-2':'pt' }}
+        </td>
+        <td class="text-center align-middle">
+          <app-botao-editar-tab [rota]="['novo', custo.id != null ? custo.id + '' : '']"
+              mensagem="editar custo">
+          </app-botao-editar-tab>
+        </td>
+        <td class="text-center align-middle">
+          <app-botao-ativar-tab [ativos]="ativos" [id]="custo.id"
+              (clique)="chamaModal($event)">
+          </app-botao-ativar-tab>
+        </td>
+        <td class="text-center align-middle">
+          <app-botao-excluir-tab [id]="custo.id" (clique)="chamaModal($event)">
+          </app-botao-excluir-tab>
+        </td>
+      </tr>
+    </tbody>
+  </app-tabela>
+</app-pagina>
+<app-modal #modal (sim)="concordou($event)"></app-modal>

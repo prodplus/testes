@@ -12,12 +12,16 @@ import { ComponentsModule } from '../components/components.module';
 import { ListaFeriadosComponent } from './feriado/lista-feriados/lista-feriados.component';
 import { CadFeriadoComponent } from './feriado/cad-feriado/cad-feriado.component';
 import { HomeComponent } from './home/home.component';
+import { ListaCustosComponent } from './custo/lista-custos/lista-custos.component';
+import { CadCustoComponent } from './custo/cad-custo/cad-custo.component';
 
 @NgModule({
   declarations: [
     ListaFeriadosComponent,
     CadFeriadoComponent,
-    HomeComponent
+    HomeComponent,
+    ListaCustosComponent,
+    CadCustoComponent
   ],
   imports: [
     CommonModule,

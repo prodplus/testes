@@ -1,0 +1,45 @@
+<app-pagina [isLoading]="isLoading">
+  <app-titulo texto="Custos Fixos"></app-titulo>
+  <div class="text-center mb-4">
+    <app-botao-cancelar (clique)="cancelar()"></app-botao-cancelar>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <div class="col-5 mb-3">
+      <label for="inputDescricao" class="form-label">Descrição:</label>
+      <input type="text" [ngClass]="getInputUpperClass('descricao')"
+          formControlName="descricao">
+      <div class="invalid-feedback">
+        campo obrigatório!
+      </div>
+    </div>
+    <div class="row col-12 mb-3">
+      <div class="col-3">
+        <label for="inputPeriodo" class="form-label">Período:</label>
+        <select id="inputPeriodo" [ngClass]="getSelectClass('periodo')"
+            formControlName="periodo">
+          <option [ngValue]="null" disabled>selecione</option>
+          <option *ngFor="let periodo of periodos" [value]="periodo">
+            {{ periodo }}
+          </option>
+        </select>
+        <div class="invalid-feedback">
+          campo obrigatório!
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="inputValor" class="form-label">Valor:</label>
+        <input currencyMask id="inputValor" formControlName="valor"
+            [ngClass]="getInputClass('valor')">
+        <div class="invalid-feedback">
+          campo obrigatório!
+        </div>
+      </div>
+    </div>
+    <div class="d-grid gap-1">
+      <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+        salvar
+      </button>
+    </div>
+  </form>
+</app-pagina>
+<app-modal #modal></app-modal>

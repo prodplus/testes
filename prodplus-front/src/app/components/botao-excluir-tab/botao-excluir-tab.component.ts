@@ -14,8 +14,7 @@ export class BotaoExcluirTabComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onClick() {
     this.clique.emit({ id: this.id, tipo: 'e' });

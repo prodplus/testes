@@ -20,6 +20,9 @@ import { PaginadorComponent } from './paginador/paginador.component';
 import { BotaoEditarTabComponent } from './botao-editar-tab/botao-editar-tab.component';
 import { BotaoExcluirTabComponent } from './botao-excluir-tab/botao-excluir-tab.component';
 import { BotaoCancelarComponent } from './botao-cancelar/botao-cancelar.component';
+import { ControleAtivosComponent } from './controle-ativos/controle-ativos.component';
+import { BotaoAtivarComponent } from './botao-ativar/botao-ativar.component';
+import { BotaoAtivarTabComponent } from './botao-ativar-tab/botao-ativar-tab.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { BotaoCancelarComponent } from './botao-cancelar/botao-cancelar.componen
     PaginadorComponent,
     BotaoEditarTabComponent,
     BotaoExcluirTabComponent,
-    BotaoCancelarComponent
+    BotaoCancelarComponent,
+    ControleAtivosComponent,
+    BotaoAtivarComponent,
+    BotaoAtivarTabComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +65,9 @@ import { BotaoCancelarComponent } from './botao-cancelar/botao-cancelar.componen
     PaginadorComponent,
     BotaoEditarTabComponent,
     BotaoExcluirTabComponent,
-    BotaoCancelarComponent
+    BotaoCancelarComponent,
+    ControleAtivosComponent,
+    BotaoAtivarTabComponent
   ]
 })
 export class ComponentsModule { }
